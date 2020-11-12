@@ -1,34 +1,53 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-import Home from '@/pages/Home';
-const Profile = () => import(/* webpackChunkName: "profile" */'@/pages/Profile');
-const NewProject = () => import(/* webpackChunkName: "new-project" */'@/pages/NewProject');
+import Home from "@/pages/Home";
+const Profile = () =>
+  import(/* webpackChunkName: "profile" */ "@/pages/Profile");
 
-Vue.use(VueRouter)
+const NewProject = () =>
+  import(/* webpackChunkName: "new-project" */ "@/pages/NewProject");
+
+const ProjectsList = () =>
+  import(/* webpackChunkName: "projects" */ "@/pages/Projects");
+
+const Accelerators = () =>
+  import(/* webpackChunkName: "accelerators" */ "@/pages/Accelerators");
+
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    name: "Home",
     component: Home
   },
   {
-    path: '/profile',
-    name: 'Profile',
+    path: "/profile",
+    name: "Profile",
     component: Profile
   },
   {
-    path: '/projects/new',
-    name: 'New Project',
+    path: "/projects",
+    name: "Projects",
+    component: ProjectsList
+  },
+  {
+    path: "/projects/new",
+    name: "New Project",
     component: NewProject
+  },
+  {
+    path: "/accelerators",
+    name: "Accelerators",
+    component: Accelerators
   }
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;
