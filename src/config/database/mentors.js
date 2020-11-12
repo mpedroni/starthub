@@ -1,7 +1,8 @@
 export default [
   {
     name: "Rafael de Albuquerque",
-    skills: ["jurídico"],
+    bio: "Pessoas constroem empresas, clientes estão no centro, dados comprovam hipóteses, estratégia e foco direcionam as organizações, a tecnologia é uma ferramenta que maximiza os potenciais, para os novos desafios cabe o aprendizado. Meu desafio atual é combinar todos esses elementos para construirmos a melhor equipe, com a melhor cultura, apresentar os melhores resultados e gerar a maior satisfação do cliente. ",
+    skills: ["jurídico","operações"],
     avatar:
       "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription01&hairColor=Platinum&facialHairType=BeardMedium&facialHairColor=Black&clotheType=Hoodie&clotheColor=PastelBlue&eyeType=WinkWacky&eyebrowType=AngryNatural&mouthType=Vomit&skinColor=Light",
     projects: [],
@@ -9,11 +10,12 @@ export default [
   },
   {
     name: "Laila Martins",
+    bio: "HubSpot for Startups is designed specifically for startups that need tools, strategy & support for growth that's both fast and scalable. Our goal is to help millions of startups grow better. Learn more:  https://www.hubspot.com/startups/. Through our partner program, we collaborate with a global network of accelerators, incubators, and VC firms to help startups scale smart. The program includes startup-friendly prices for HubSpot's Growth Suite software as well as many more benefits. Go to https://www.hubspot.com/startups/partners to learn more. ",
     avatar:
       "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight2&accessoriesType=Round&hairColor=Platinum&facialHairType=Blank&facialHairColor=BrownDark&clotheType=BlazerSweater&clotheColor=Blue02&graphicType=SkullOutline&eyeType=Side&eyebrowType=FlatNatural&mouthType=Eating&skinColor=Pale",
     skills: ["análise de software"],
     projects: [2],
-    accelerators: []
+    accelerators: ["HubSpot"]
   },
   {
     name: "David Ledson",
@@ -37,6 +39,7 @@ export default [
   },
   {
     name: "Horácio Poblete",
+    bio: "Atuação nas principais áreas de desenvolvimento de negócios, entre elas contratos, negociações, estrutura societária, ativos intelectuais, tecnologia, proteção de dados e solução de disputas. | Performance in the main areas of business development, including contracts, negotiations, corporate structure, intellectual assets, technology, data protection and dispute resolution.",
     avatar:
       "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFroBand&accessoriesType=Sunglasses&hairColor=BlondeGolden&facialHairType=BeardMagestic&facialHairColor=Red&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Wink&eyebrowType=FlatNatural&mouthType=Serious&skinColor=Light",
     skills: ["investimentos", "b2b"],
