@@ -8,11 +8,13 @@ export default [
       {
         id: 1,
         name: "Eliezer Duarte",
+        username: "elieser",
         skills: ["biólogo", "pesquisador", "professor de biologia"]
       },
       {
         id: 2,
-        name: "Augusto Hoffmann",
+        name: "Carolina Hoffmann",
+        username: "hoffmann",
         skills: [
           "data scientist",
           "dev python",
@@ -34,16 +36,18 @@ export default [
       "sustentabilidade",
       "meio ambiente"
     ],
-    needings: ["dev C/C++", "advogado", "engenheiro eletricista"]
+    needings: ["dev C/C++", "advogado", "engenheiro eletricista", "biólogo"]
   },
   {
     id: 2,
     title: "Aplicativo mobile de compartilhamento de fotos e vídeos",
     name: "Instabook",
+    code: "instabook",
     authors: [
       {
         id: 2,
-        name: "Augusto Hoffmann",
+        name: "Carolina Hoffmann",
+        username: "hoffmann",
         skills: [
           "data scientist",
           "dev python",
@@ -73,6 +77,7 @@ export default [
       {
         id: 2,
         name: "Jhony Filipe Augusto Gonçalves",
+        username: "jhony",
         skills: ["dev php", "dev nodejs", "dev vuejs", "dev angular", "docker"]
       }
     ],

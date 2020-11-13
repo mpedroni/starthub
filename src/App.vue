@@ -27,6 +27,18 @@
         dark
         @click="
           () => {
+            $router.push('/inbox');
+          }
+        "
+      >
+        <v-icon v-text="'mdi-message-text-outline'" />
+      </v-btn>
+
+      <v-btn
+        icon
+        dark
+        @click="
+          () => {
             $router.push('/login');
           }
         "

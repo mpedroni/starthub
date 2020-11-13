@@ -11,13 +11,19 @@ const NewProject = () =>
 const ProjectsList = () =>
   import(/* webpackChunkName: "projects" */ "@/pages/Projects");
 
+const Project = () =>
+  import(/* webpackChunkName: "project" */ "@/pages/Project");
+
 const Accelerators = () =>
   import(/* webpackChunkName: "accelerators" */ "@/pages/Accelerators");
 
 const Mentors = () =>
   import(/* webpackChunkName: "mentors" */ "@/pages/Mentors");
 
-  Vue.use(VueRouter);
+const Academy = () =>
+  import(/* webpackChunkName: "academy" */ "@/pages/Academy");
+
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -41,6 +47,14 @@ const routes = [
     component: NewProject
   },
   {
+    path: "/projects/:projectCode",
+    name: "Project",
+    component: Project,
+    props: ({ params }) => ({
+      projectCode: params.projectCode
+    })
+  },
+  {
     path: "/accelerators",
     name: "Accelerators",
     component: Accelerators
@@ -49,6 +63,11 @@ const routes = [
     path: "/mentors",
     name: "Mentors",
     component: Mentors
+  },
+  {
+    path: "/academy",
+    name: "Academy",
+    component: Academy
   }
 ];
 

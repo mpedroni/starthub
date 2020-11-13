@@ -22,7 +22,7 @@ export default [
   {
     name: "Academy",
     icon: "mdi-school",
-    path: "/content"
+    path: "/academy"
   },
   {
     name: "Mentores",
