@@ -39,13 +39,12 @@ export default [
   },
   {
     name: "Horácio Poblete",
-    bio: "Atuação nas principais áreas de desenvolvimento de negócios, entre elas contratos, negociações, estrutura societária, ativos intelectuais, tecnologia, proteção de dados e solução de disputas. | Performance in the main areas of business development, including contracts, negotiations, corporate structure, intellectual assets, technology, data protection and dispute resolution.",
+    bio:
+      "Tech entrepreneur & Jedi :) Passion for creation moves me. In love with Machine Learning application in business and Inside Sales (Outbound) state of the art techniques.",
     avatar:
       "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFroBand&accessoriesType=Sunglasses&hairColor=BlondeGolden&facialHairType=BeardMagestic&facialHairColor=Red&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Wink&eyebrowType=FlatNatural&mouthType=Serious&skinColor=Light",
     skills: ["investimentos", "b2b"],
     projects: [],
-    bio:
-      "Tech entrepreneur & Jedi :) Passion for creation moves me. In love with Machine Learning application in business and Inside Sales (Outbound) state of the art techniques.",
     accelerators: ["artemisia"]
   }
 ];

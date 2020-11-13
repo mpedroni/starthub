@@ -3,9 +3,13 @@
     <v-col>
       <v-row align="center">
         <v-col cols="auto" class="py-0">
+          <v-subheader>
+              <span class="body-2">@{{user.username}}</span>
+          </v-subheader>
           <v-subheader class="text-h2 font-weight-normal mb-2">
             {{ user.name }}
           </v-subheader>
+          
 
           <v-col class="pl-5 py-0">
             <span class="caption font-italic">skills: </span>

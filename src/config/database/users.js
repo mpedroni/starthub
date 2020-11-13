@@ -2,6 +2,7 @@ export default [
   {
     id: 1,
     name: "Eliezer Duarte",
+    username: "elieser",
     avatar:
       "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads02&accessoriesType=Prescription01&hairColor=BrownDark&facialHairType=BeardMagestic&facialHairColor=BlondeGolden&clotheType=ShirtVNeck&clotheColor=Black&eyeType=Close&eyebrowType=AngryNatural&mouthType=Twinkle&skinColor=Light",
     bio:
@@ -19,6 +20,7 @@ export default [
   {
     id: 2,
     name: "Augusto Hoffmann",
+    username: "hoffmann",
     skills: ["data scientist", "dev python", "processamento de dados"],
     locality: {
       city: "Salvador",
@@ -32,6 +34,7 @@ export default [
   {
     id: 3,
     name: "Jhony Filipe Augusto Gonçalves",
+    username: "Jhony",
     skills: ["dev php", "dev nodejs", "dev vuejs", "dev angular", "docker"],
     locality: {
       city: "Tarauacá",

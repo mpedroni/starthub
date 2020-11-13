@@ -14,7 +14,10 @@ const ProjectsList = () =>
 const Accelerators = () =>
   import(/* webpackChunkName: "accelerators" */ "@/pages/Accelerators");
 
-Vue.use(VueRouter);
+const Mentors = () =>
+  import(/* webpackChunkName: "mentors" */ "@/pages/Mentors");
+
+  Vue.use(VueRouter);
 
 const routes = [
   {
@@ -41,6 +44,11 @@ const routes = [
     path: "/accelerators",
     name: "Accelerators",
     component: Accelerators
+  },
+  {
+    path: "/mentors",
+    name: "Mentors",
+    component: Mentors
   }
 ];
 
