@@ -118,6 +118,7 @@
                       :key="needing"
                       x-small
                       class="mr-1 font-weight-medium"
+                      :dark="needing.includes(option.query)"
                       :color="
                         needing.includes(option.query)
                           ? 'orange darken-2'
