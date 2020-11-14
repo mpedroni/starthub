@@ -418,7 +418,7 @@ export default {
             if (
               typeof person[attr] === "string" &&
               !["avatar", "usertype"].includes(attr) &&
-              person[attr].includes(query)
+              person[attr].toLowerCase().includes(query.toLowerCase())
             ) {
               this.options.push({
                 id: person.id,
@@ -431,7 +431,7 @@ export default {
                 type: `people${
                   findAny || this.search.includes("skills") ? ", skills" : ""
                 }`,
-                path: `/${person.username}`,
+                path: `/profile/${person.username}`,
                 query
               });
 

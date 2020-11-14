@@ -76,6 +76,12 @@
                         >
                       </v-col>
                       <v-col cols="12" class="text-end">
+                        <v-btn color="primary" depressed class="mx-2">
+                          <v-icon left>
+                            mdi-plus
+                          </v-icon>
+                          seguir
+                        </v-btn>
                         <v-btn color="primary" depressed>
                           <v-icon left>
                             mdi-clock-outline
@@ -85,18 +91,6 @@
                       </v-col>
                     </v-row>
                   </v-list-item-content>
-
-                  <v-list-item-action class="my-auto">
-                    <v-row class="fill-height" justify="center" align="center">
-                      <v-col cols="auto" class="text-center">
-                        <v-btn icon @click.prevent="() => {}">
-                          <v-icon>
-                            mdi-star-outline
-                          </v-icon>
-                        </v-btn>
-                      </v-col>
-                    </v-row>
-                  </v-list-item-action>
                 </v-list-item>
                 <v-divider
                   v-if="index < mentors.length - 1"

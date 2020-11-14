@@ -10,17 +10,6 @@
             {{ user.name }}
           </v-subheader>
 
-          <v-col class="pl-5 py-0">
-            <span class="caption font-italic">skills: </span>
-            <v-chip
-              v-for="skill in user.skills"
-              :key="skill"
-              v-text="skill"
-              class="mr-1"
-              color="primary"
-              small
-            />
-          </v-col>
           <v-spacer />
         </v-col>
         <v-col class="text-end py-0">
@@ -29,7 +18,7 @@
           </v-avatar>
         </v-col>
 
-        <v-col cols="12" v-if="id">
+        <v-col cols="12" v-if="username">
           <v-btn depressed color="primary">
             <v-icon left>mdi-plus</v-icon>
             Seguir
@@ -52,8 +41,18 @@
             <v-card-text class="text-justify">
               {{ user.bio }}
             </v-card-text>
+            <v-col class="pl-5">
+              <span class="caption font-italic">skills: </span>
+              <v-chip
+                v-for="skill in user.skills"
+                :key="skill"
+                v-text="skill"
+                class="mr-1"
+                color="primary"
+                small
+              />
+            </v-col>
           </v-card>
-
           <v-col class="px-0">
             <v-card outlined>
               <v-card-title>
@@ -108,7 +107,15 @@
             </v-card-title>
             <v-list three-line>
               <template
-                v-for="({ id, title, description, tags, locality, code },
+                v-for="({
+                  id,
+                  title,
+                  description,
+                  tags,
+                  locality,
+                  code,
+                  needings
+                },
                 index) in userProjects"
               >
                 <v-list-item :key="id" link :to="`/projects/${code}`">
@@ -124,6 +131,18 @@
                         {{ `${locality.city} | ${locality.state}` }}
                       </v-col>
                       <v-col cols="12">
+                        <span class="caption font-italic">necessidades: </span>
+                        <v-chip
+                          v-for="(needing, index) in needings"
+                          :key="`${needing}_${index}`"
+                          v-text="needing"
+                          color="orange darken-2"
+                          dark
+                          class="mr-1 mt-1"
+                          small
+                        />
+                      </v-col>
+                      <v-col cols="12" class="py-0">
                         <span class="caption font-italic">tags: </span>
                         <v-chip
                           v-for="(tag, index) in tags"
@@ -159,18 +178,21 @@ export default {
   name: "profile",
   data: function() {
     return {
-      user: this.id ? users.find(u => u.id === parseInt(this.id)) : users[0]
+      user: this.username
+        ? users.find(user => user.username === this.username)
+        : users[0]
     };
   },
   props: {
-    id: String
+    username: String
   },
+
   computed: {
     userProjects() {
       return projects.filter(p => p.authors.find(a => a.id === this.user.id));
     },
     userPosts() {
-      return feed.filter(post => post.authorID === parseInt(this.id));
+      return feed.filter(post => post.authorID === parseInt(this.user.id));
     }
   }
 };

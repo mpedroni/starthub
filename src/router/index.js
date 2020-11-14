@@ -32,16 +32,16 @@ const routes = [
     component: Home
   },
   {
-    path: "/profile/:id",
+    path: "/profile/:username",
     name: "Profile",
     component: Profile,
     props: ({ params }) => ({
-      id: params.id
+      username: params.username
     })
   },
   {
     path: "/profile",
-    name: "Profile",
+    name: "My-Profile",
     component: Profile
   },
   {

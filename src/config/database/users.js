@@ -25,6 +25,8 @@ export default [
     name: "Carolina Hoffmann",
     username: "hoffmann",
     usertype: "Membro",
+    bio:
+      "I am passionate about solving problems and creating great-looking and responsive applications that make our lives easier. My primary focus is in web technologies, but I love expanding my horizon to learn new things and solve real-world problems.",
     skills: ["data scientist", "dev python", "processamento de dados"],
     locality: {
       city: "Salvador",
@@ -47,6 +49,8 @@ export default [
       city: "Tarauacá",
       state: "AC"
     },
+    bio:
+      "Mestre em Computação Aplicada pela Universidade do Vale do Itajaí (2017), possui graduação em Sistemas de Informação pelo Centro Universitário de Brusque (2006) e especialização em Gerenciamento de Projetos em Tecnologia da Informação pelo Instituto Catarinense de Pós-Graduação (2010). Atualmente é desenvolvedor FullStack na Secretaria Municipal de Educação Itajaí. Tem experiência na área de Ciência da Computação, com ênfase em INTERNET, atuando principalmente nos seguintes temas: gerência de projetos, sistemas de informação, desenvolvimento e banco de dados.",
     contact: {
       github: "https://github.com",
       linkedin: "https://linkedin.com"

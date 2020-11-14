@@ -21,13 +21,6 @@
               outlined
             />
           </v-col>
-          <v-col cols="12" class="py-0">
-            <v-textarea
-              v-model="description"
-              label="Descrição Detalhada"
-              outlined
-            />
-          </v-col>
 
           <v-col cols="6">
             <v-text-field v-model="city" label="Cidade" outlined />
