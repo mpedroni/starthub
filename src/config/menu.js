@@ -7,7 +7,7 @@ export default [
   {
     name: "Meu Perfil",
     icon: "mdi-account",
-    path: "/profile"
+    path: "/profile/"
   },
   {
     name: "Projetos",

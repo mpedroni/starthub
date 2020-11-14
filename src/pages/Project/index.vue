@@ -22,18 +22,18 @@
               <v-subheader class="caption mt-n5">
                 Autores
               </v-subheader>
-              <v-list class="pa-0">
+              <v-list class="pa-0" link>
                 <v-list-item
+                  :to="`/profile/${author.id}`"
                   v-for="author in authors"
                   :key="author.username"
-                  class="mt-n5"
                 >
                   <v-list-item-avatar>
                     <v-avatar>
                       <img :src="author.user.avatar" />
                     </v-avatar>
                   </v-list-item-avatar>
-                  <v-list-item-content>
+                  <v-list-item-content class="py-0">
                     <v-subheader>
                       {{ author.name }}
                     </v-subheader>
@@ -146,7 +146,7 @@
               </v-subheader>
             </v-card-title>
             <v-card-text>
-              <v-timeline>
+              <v-timeline v-if="posts.length">
                 <v-timeline-item v-for="post in posts" :key="post.content">
                   <template v-slot:icon>
                     <v-avatar>

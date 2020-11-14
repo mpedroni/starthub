@@ -1,17 +1,19 @@
 <template>
   <v-row>
     <v-col cols="3">
-      <v-card outlined color="grey lighten-4">
-        <v-col class="py-0 text-center">
+      <v-card outlined>
+        <v-col class="py-0 text-center grey lighten-4">
           <v-avatar size="110">
             <img :src="user.avatar" :alt="user.name" />
           </v-avatar>
         </v-col>
-        <v-col class="text-center py-0">
+        <v-col class="text-center py-0 grey lighten-4">
           {{ user.name }}
         </v-col>
-        <v-col class="text-center caption py-0"> @{{ user.username }} </v-col>
-        <v-divider class="mt-2" />
+        <v-col class="text-center caption pt-0 grey lighten-4 ">
+          @{{ user.username }}
+        </v-col>
+        <v-divider />
         <v-list nav color="grey lighten-5">
           <v-subheader class="px-0">Meus Projetos</v-subheader>
           <v-list-item
@@ -19,11 +21,26 @@
             v-for="project in userProjects"
             :key="project.id"
             class="py-0 my-0"
+            :to="`projects/${project.code}`"
           >
-            <v-list-item-content>
-              <v-list-item-title class="body-2">
-                {{ project.name }}
-              </v-list-item-title>
+            <v-list-item-content class="body-2">
+              {{ project.name }}
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-card>
+      <v-card outlined class="mt-3">
+        <v-list nav color="grey lighten-5">
+          <v-subheader class="px-0">Sugestões para você</v-subheader>
+          <v-list-item
+            link
+            v-for="project in suggestedProjects"
+            :key="project.id"
+            class="py-0 my-0"
+            :to="`projects/${project.code}`"
+          >
+            <v-list-item-content class="body-2">
+              {{ project.name }}
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -79,6 +96,7 @@
           likes,
           shares,
           liked,
+          comments,
           projectsID
         } in feed"
         :key="content"
@@ -133,6 +151,38 @@
                   {{ shares }}
                 </v-btn>
               </v-col>
+              <v-col cols="12" class="pb-0 px-6">
+                <v-text-field
+                  rounded
+                  filled
+                  placeholder="Adicionar comentário..."
+                  append-icon="mdi-send"
+                />
+              </v-col>
+              <v-col cols="12" v-if="comments.length" class="pt-0 mt-n5">
+                <v-list py-0>
+                  <v-list-item
+                    v-for="(comment, index) in comments"
+                    :key="index"
+                  >
+                    <v-list-item-avatar>
+                      <v-avatar>
+                        <img
+                          :src="
+                            users.find(user => comment.userID === user.id)
+                              .avatar
+                          "
+                        />
+                      </v-avatar>
+                    </v-list-item-avatar>
+                    <v-list-item-content>
+                      <v-subheader>
+                        {{ comment.content }}
+                      </v-subheader>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list>
+              </v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -158,6 +208,15 @@ export default {
   computed: {
     userProjects() {
       return projects.filter(p => p.authors.find(a => a.id === this.user.id));
+    },
+    suggestedProjects() {
+      return projects.filter(project =>
+        project.needings.find(needing =>
+          this.user.skills.find(
+            skill => skill.includes(needing) || needing.includes(skill)
+          )
+        )
+      );
     }
   },
   methods: {
