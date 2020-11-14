@@ -16,11 +16,12 @@
                   authors,
                   tags,
                   needings,
-                  locality
+                  locality,
+                  code
                 },
                 index) in projects"
               >
-                <v-list-item :key="id" link>
+                <v-list-item :key="id" link :to="`/projects/${code}`">
                   <v-list-item-content>
                     <v-list-item-title class="font-weight-medium">
                       {{ title }}

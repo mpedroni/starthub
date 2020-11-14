@@ -1,6 +1,7 @@
 export default [
   {
     id: 1,
+    code: "petenergy",
     name: "PET Energy",
     title:
       "Geração de energia elétrica utilizando garrafas PET e energia solar",

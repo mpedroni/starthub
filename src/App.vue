@@ -7,8 +7,9 @@
         InovaChallenge
       </router-link>
 
-      <v-text-field
-        v-model="search"
+      <v-combobox
+        :items="items"
+        small-chips
         prepend-inner-icon="mdi-magnify"
         class="ml-10"
         hide-details
@@ -17,7 +18,9 @@
         dark
         rounded
         filled
-        placeholder="Pesquise projetos, usuários ou as skills desejadas"
+        v-model="search"
+        multiple
+        @update:search-input="log($event)"
       />
 
       <v-spacer></v-spacer>
@@ -90,8 +93,14 @@ export default {
   data: () => ({
     menuOptions,
     drawer: false,
-    search: null
-  })
+    search: null,
+    items: ["projetos", "tags", "necessidades", "pessoas"]
+  }),
+  methods: {
+    log(e) {
+      console.log("e :>> ", e);
+    }
+  }
 };
 </script>
 

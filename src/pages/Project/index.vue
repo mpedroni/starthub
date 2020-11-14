@@ -2,9 +2,9 @@
   <v-row v-if="project">
     <v-col>
       <v-row align="center">
-        <v-col cols="auto" class="py-0">
+        <v-col cols="6" class="py-0">
           <code class="ml-3">
-            {{ authors[0].username }}@{{ projectCode }}
+            @{{ authors[0].username }}:{{ projectCode }}
           </code>
           <v-subheader class="text-h2 font-weight-normal my-5">
             {{ project.name }}
@@ -15,6 +15,36 @@
           </v-subheader>
 
           <v-spacer />
+        </v-col>
+        <v-col cols="6" class="pa-0">
+          <v-row justify="end">
+            <v-col cols="auto">
+              <v-subheader class="caption mt-n5">
+                Autores
+              </v-subheader>
+              <v-list class="pa-0">
+                <v-list-item
+                  v-for="author in authors"
+                  :key="author.username"
+                  class="mt-n5"
+                >
+                  <v-list-item-avatar>
+                    <v-avatar>
+                      <img :src="author.user.avatar" />
+                    </v-avatar>
+                  </v-list-item-avatar>
+                  <v-list-item-content>
+                    <v-subheader>
+                      {{ author.name }}
+                    </v-subheader>
+                    <v-subheader class="caption mt-n8">
+                      @{{ author.username }}
+                    </v-subheader>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
+            </v-col>
+          </v-row>
         </v-col>
 
         <v-col cols="12">
@@ -115,6 +145,24 @@
                 Atualizações
               </v-subheader>
             </v-card-title>
+            <v-card-text>
+              <v-timeline>
+                <v-timeline-item v-for="post in posts" :key="post.content">
+                  <template v-slot:icon>
+                    <v-avatar>
+                      <img :src="post.author.avatar" />
+                    </v-avatar>
+                  </template>
+                  <template v-slot:opposite>
+                    <span>{{ post.date }}</span>
+                  </template>
+                  <v-card outlined>
+                    <v-card-title> @{{ post.author.username }} </v-card-title>
+                    <v-card-text>{{ post.content }}</v-card-text>
+                  </v-card>
+                </v-timeline-item>
+              </v-timeline>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -133,7 +181,8 @@ export default {
     projectCode: String
   },
   data: () => ({
-    user: users[0]
+    user: users[0],
+    users
   }),
   computed: {
     userProjects() {
@@ -143,10 +192,22 @@ export default {
       return projects[projects.findIndex(p => p.code === this.projectCode)];
     },
     authors() {
-      return projects.find(p => p.code === this.projectCode).authors;
+      const authors = projects.find(p => p.code === this.projectCode).authors;
+      return authors.map(author => ({
+        ...author,
+        user: this.users.find(user => user.id === author.id)
+      }));
     },
     posts() {
-      return feed.filter(post => post.projectsID.includes(this.project.id));
+      const posts = feed.filter(post =>
+        post.projectsID.includes(this.project.id)
+      );
+      return posts
+        .map(post => ({
+          ...post,
+          author: this.users.find(user => user.id === post.authorID)
+        }))
+        .sort((a, b) => (a.data < b.date ? -1 : 1));
     }
   }
 };
