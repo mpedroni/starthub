@@ -29,7 +29,7 @@
           </v-avatar>
         </v-col>
 
-        <v-col cols="12">
+        <v-col cols="12" v-if="id">
           <v-btn depressed color="primary">
             <v-icon left>mdi-plus</v-icon>
             Seguir
@@ -61,27 +61,26 @@
                   Posts
                 </v-subheader>
               </v-card-title>
-              <v-list three-line>
+              <v-list three-line v-if="userPosts.length">
                 <template
-                  v-for="({ id, title, description }, index) in userProjects"
+                  v-for="({ content, likes, shares }, index) in userPosts"
                 >
-                  <v-list-item :key="id" link>
+                  <v-list-item :key="index" link>
                     <v-list-item-content>
-                      <v-list-item-title class="font-weight-medium">
-                        {{ title }}
-                      </v-list-item-title>
-                      <v-list-item-subtitle>
-                        {{ description }}
-                      </v-list-item-subtitle>
+                      <v-list-item-content>
+                        {{ content }}
+                      </v-list-item-content>
                       <v-row justify="end">
                         <v-col cols="auto">
-                          <v-btn icon>
-                            <v-icon>mdi-heart</v-icon>
+                          <v-btn text>
+                            <v-icon>mdi-heart </v-icon>
+                            {{ likes }}
                           </v-btn>
                         </v-col>
                         <v-col cols="auto">
-                          <v-btn icon>
-                            <v-icon>mdi-share</v-icon>
+                          <v-btn text>
+                            <v-icon>mdi-share </v-icon>
+                            {{ shares }}
                           </v-btn>
                         </v-col>
                       </v-row>
@@ -89,10 +88,13 @@
                   </v-list-item>
                   <v-divider
                     v-if="index < userProjects.length - 1"
-                    :key="`${id}_divider`"
+                    :key="`${index}_divider`"
                   />
                 </template>
               </v-list>
+              <v-subheader v-else>
+                Nenhuma postagem para exibir...
+              </v-subheader>
             </v-card>
           </v-col>
         </v-col>
@@ -106,10 +108,10 @@
             </v-card-title>
             <v-list three-line>
               <template
-                v-for="({ id, title, description, tags, locality },
+                v-for="({ id, title, description, tags, locality, code },
                 index) in userProjects"
               >
-                <v-list-item :key="id" link>
+                <v-list-item :key="id" link :to="`/projects/${code}`">
                   <v-list-item-content>
                     <v-list-item-title class="font-weight-medium">
                       {{ title }}
@@ -151,15 +153,24 @@
 <script>
 import users from "@/config/database/users";
 import projects from "@/config/database/projects";
+import feed from "@/config/database/feed";
 
 export default {
   name: "profile",
-  data: () => ({
-    user: users[0]
-  }),
+  data: function() {
+    return {
+      user: this.id ? users.find(u => u.id === parseInt(this.id)) : users[0]
+    };
+  },
+  props: {
+    id: String
+  },
   computed: {
     userProjects() {
       return projects.filter(p => p.authors.find(a => a.id === this.user.id));
+    },
+    userPosts() {
+      return feed.filter(post => post.authorID === parseInt(this.id));
     }
   }
 };

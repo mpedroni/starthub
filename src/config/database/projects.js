@@ -37,7 +37,7 @@ export default [
       "sustentabilidade",
       "meio ambiente"
     ],
-    needings: ["dev C/C++", "advogado", "engenheiro eletricista", "biólogo"]
+    needings: ["advogado", "engenheiro eletricista"]
   },
   {
     id: 2,
@@ -67,11 +67,13 @@ export default [
     needings: [
       "dev frontend",
       "ux designer",
-      "advogado com conhecimento em direitos autorais"
+      "advogado com conhecimento em direitos autorais",
+      "pesquisador"
     ]
   },
   {
     id: 3,
+    code: "erudion",
     title: "Software livre de gestão empresarial",
     name: "Erudion",
     authors: [
@@ -88,7 +90,7 @@ export default [
     },
     description:
       "Software que dá suporte e permite todo o processo de gestão empresarial, desde o planejamento até projeções futuras",
-    tags: ["gestao empresarial", "php", "vuejs"],
+    tags: ["gestao empresarial", "php", "vuejs", "app"],
     needings: [
       "ux designer",
       "dev frontend",
