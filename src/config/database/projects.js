@@ -78,7 +78,7 @@ export default [
     name: "Erudion",
     authors: [
       {
-        id: 2,
+        id: 3,
         name: "Jhony Filipe Augusto Gonçalves",
         username: "jhony",
         skills: ["dev php", "dev nodejs", "dev vuejs", "dev angular", "docker"]
