@@ -14,24 +14,38 @@
                   bio,
                   skills,
                   projects,
-                  avatar
+                  avatar,
+                  institute,
+                  price
                 },
                 index) in mentors"
               >
                 <v-list-item :key="name" link>
                   <v-list-item-avatar>
-            <v-img :src="avatar"></v-img>
-          </v-list-item-avatar>
+                    <v-img :src="avatar"></v-img>
+                  </v-list-item-avatar>
                   <v-list-item-content>
                     <v-list-item-title class="font-weight-medium">
                       {{ name }}
+                      <span v-if="institute" class="caption">
+                        - {{ institute }}</span
+                      >
                     </v-list-item-title>
                     <v-list-item-subtitle>
                       {{ bio }}
                     </v-list-item-subtitle>
                     <v-row>
-                      
-                      <v-col class="pb-0">
+                      <v-col cols="auto" class="pb-0">
+                        <span class="caption font-italic">valor hora: </span>
+                        <v-chip
+                          v-text="price ? 'R$' + price.toFixed(2) : 'grátis'"
+                          dark
+                          color="green darken-1"
+                          class="mr-1 mt-1"
+                          small
+                        />
+                      </v-col>
+                      <v-col cols="auto" class="pb-0">
                         <span class="caption font-italic">skills: </span>
                         <v-chip
                           v-for="(skill, index) in skills"
@@ -43,8 +57,10 @@
                           small
                         />
                       </v-col>
-                      <v-col cols="12">
-                        <span class="caption font-italic">projetos: </span>
+                      <v-col cols="auto" v-if="projects.length">
+                        <span class="caption font-italic"
+                          >projetos mentorados:
+                        </span>
                         <v-chip
                           v-for="(project, index) in projects"
                           :key="`${project}_${index}`"
@@ -54,9 +70,22 @@
                           small
                         />
                       </v-col>
+                      <v-col v-else cols="auto" class="mt-1">
+                        <span class="caption font-italic"
+                          >Nenhum projeto mentorado</span
+                        >
+                      </v-col>
+                      <v-col cols="12" class="text-end">
+                        <v-btn color="primary" depressed>
+                          <v-icon left>
+                            mdi-clock-outline
+                          </v-icon>
+                          Agendar Mentoria
+                        </v-btn>
+                      </v-col>
                     </v-row>
                   </v-list-item-content>
-                  
+
                   <v-list-item-action class="my-auto">
                     <v-row class="fill-height" justify="center" align="center">
                       <v-col cols="auto" class="text-center">

@@ -9,7 +9,8 @@ export default [
     avatar:
       "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription01&hairColor=Platinum&facialHairType=BeardMedium&facialHairColor=Black&clotheType=Hoodie&clotheColor=PastelBlue&eyeType=WinkWacky&eyebrowType=AngryNatural&mouthType=Vomit&skinColor=Light",
     projects: [],
-    accelerators: ["inovativa"]
+    institute: "Inovativa Brasil",
+    price: 0
   },
   {
     id: 101,
@@ -21,7 +22,8 @@ export default [
       "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight2&accessoriesType=Round&hairColor=Platinum&facialHairType=Blank&facialHairColor=BrownDark&clotheType=BlazerSweater&clotheColor=Blue02&graphicType=SkullOutline&eyeType=Side&eyebrowType=FlatNatural&mouthType=Eating&skinColor=Pale",
     skills: ["análise de software"],
     projects: [2],
-    accelerators: ["HubSpot"]
+    institute: null,
+    price: 10
   },
   {
     id: 102,
@@ -33,7 +35,8 @@ export default [
     avatar:
       "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Blank&hairColor=Blonde&facialHairType=Blank&clotheType=BlazerShirt&eyeType=WinkWacky&eyebrowType=FlatNatural&mouthType=Eating&skinColor=DarkBrown",
     projects: [],
-    accelerators: ["baita"]
+    institute: "baita",
+    price: 0
   },
   {
     id: 103,
@@ -45,7 +48,8 @@ export default [
       "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light'",
     skills: ["marketing"],
     projects: [1, 2],
-    accelerators: []
+    institute: null,
+    price: 12
   },
   {
     id: 104,
@@ -57,6 +61,7 @@ export default [
       "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFroBand&accessoriesType=Sunglasses&hairColor=BlondeGolden&facialHairType=BeardMagestic&facialHairColor=Red&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=Wink&eyebrowType=FlatNatural&mouthType=Serious&skinColor=Light",
     skills: ["investimentos", "b2b"],
     projects: [],
-    accelerators: ["artemisia"]
+    institute: "Inovativa Brasil",
+    price: 0
   }
 ];
