@@ -31,7 +31,10 @@
       </v-card>
       <v-card outlined class="mt-3">
         <v-list nav color="grey lighten-5">
-          <v-subheader class="px-0">Sugestões para você</v-subheader>
+          <v-subheader class="px-0">Deu Match!</v-subheader>
+          <v-subheader class="pa-0 mt-n6 caption"
+            >Projetos que estão precisando de você</v-subheader
+          >
           <v-list-item
             link
             v-for="project in suggestedProjects"
