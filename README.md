@@ -2,15 +2,15 @@
 
 *Aplicação desenvolvida para o Megahack 5.0 da Shawee (Desafio InovAtiva)*
 
-O StartHUB é uma plataforma *social midia* que irá auxiliar a conectar pessoas do Brasil inteiro que possuem potencial empreendedor para desenvolver suas ideias de negócios juntas.
+O StartHUB é uma plataforma *social midia* que auxiliará a conectar pessoas do Brasil inteiro que possuem potencial empreendedor para desenvolver suas ideias de negócios juntas.
 
-De forma rápida, alguém que possue uma ideia de negócio ou produto (em planejamento ou até mesmo em desenvolvimento) poderá encontrar pessoas cujas *skills* são necessárias para desenvolver o negócio ou produto. O usuário do StartHUB poderá escrever posts para a sua rede e ainda relacionar posts aos seus projetos, mantendo um histórico da evolução dos projetos cadastrados na plataforma.
+De forma rápida, alguém que possui uma ideia de negócio ou produto (em planejamento ou até mesmo em desenvolvimento) poderá encontrar pessoas cujas *skills* são necessárias para desenvolver o negócio ou produto. O usuário do StartHUB poderá escrever *posts* para a sua rede dentro do StartHUB e ainda relacionar posts aos seus projetos, mantendo um histórico da evolução dos projetos cadastrados na plataforma.
 
-Para aqueles usuários que desejarem participar de algum desses projetos, poderão encontrá-los dentro da rede social e se canditarem para fazer parte do desenvolvimento do projeto, podendo conversar diretamente com o autor do projeto.
+Para aqueles usuários que desejarem participar de algum desses projetos, poderão encontrá-los dentro da StartHUB e se canditarem para fazer parte do desenvolvimento do projeto, podendo conversar diretamente com o autor do mesmo.
 
 Não só isso, mas os autores de projetos também poderão encontrar as pessoas desejadas buscando-as por suas *skills* dentro da própria StartHUB. Apenas digitando as *skills* desejadas, a StartHUB retorna uma lista de pessoas que possuem aquela *skill* ou se interessam por ela.
 
-Com a StartHUB, a criação e desenvolvimento de projetos e startups se torna muito mais fácil e democrática, conectando pessoas que possivelmente jamais se conheceriam se não fosse pela StartHUB, democratizando e levando visibilidade para todos os aspirantes a empreendedores do Brasil.
+Com a StartHUB, a criação e desenvolvimento de projetos e startups se torna muito mais fácil e democrática, conectando pessoas que possivelmente jamais se conheceriam se não fosse pela StartHUB, democratizando e fornecendo visibilidade para todos os aspirantes a empreendedores do Brasil.
 
 ### Uma MVP do StartHUB está disponível [aqui](http://starthub.surge.sh/).
 
@@ -42,6 +42,6 @@ Com a StartHUB, a criação e desenvolvimento de projetos e startups se torna mu
 
 
 ### Autores:
-* Matheus Pedroni ([@mpedroni](https://github.com/mpedroni)) | dev, engenharia
+* Everton Júnior da Silva Arruda | business, growth hacker
 * Filipe Augusto Gonçalves ([@flpgst](https://github.com/flpgst)) | dev, engenharia
-* Everton Júnior da Silva Arruda | business | growth hacker
+* Matheus Pedroni ([@mpedroni](https://github.com/mpedroni)) | dev, engenharia
