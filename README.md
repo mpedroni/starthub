@@ -42,6 +42,6 @@ Com a StartHUB, a criação e desenvolvimento de projetos e startups se torna mu
 
 
 ### Autores:
-* Everton Júnior da Silva Arruda | business, growth hacker
+* Everton Júnior da Silva Arruda ([@evertonjrsa](https://github.com/evertonjrsa))| business, growth hacker
 * Filipe Augusto Gonçalves ([@flpgst](https://github.com/flpgst)) | dev, engenharia
 * Matheus Pedroni ([@mpedroni](https://github.com/mpedroni)) | dev, engenharia
